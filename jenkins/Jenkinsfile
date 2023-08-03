@@ -3,7 +3,15 @@ pipeline {
     environment {
         CI = 'true'
     }
+    parameters {
+        booleanParam(defaultValue: false, description: "testing parameters", name: "myBoolean")
+    } 
     stages {
+        stage("Paramerters") {
+            steps {
+                echo "boolean parameter is : ${parameters.myBoolean}"
+            }
+        }
         stage('Build') {
             steps {
                 sh 'npm install'
