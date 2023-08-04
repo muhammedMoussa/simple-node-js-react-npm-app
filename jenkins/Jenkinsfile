@@ -23,7 +23,7 @@ pipeline {
         }
         stage ('Build Remote') {
             steps {
-                build job 'node-api', parameters: [[$class: 'BooleanParameterValue', name: 'isProd', value: 'true']]
+                build job: 'node-api', parameters: [[$class: 'BooleanParameterValue', name: 'isProd', value: 'true']]
             }
         }
     }
