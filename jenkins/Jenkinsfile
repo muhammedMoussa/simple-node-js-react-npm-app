@@ -1,8 +1,19 @@
 pipeline {
     agent any
+    parameters {
+        booleanParam(defaultValue: false, description: 'testing parameters', name: 'myBoolean')
+    } 
     stages {
         stage('Build') {
             steps {
+                script {
+                    if(params.myBoolean == true) {
+                        currentBuild.result = 'SUCCESS'
+                        return
+                    } else {
+                        echo 'boolean parameter: ${params.myBoolean}'
+                    }
+                }
                 // sh 'npm install'
                 echo 'Build'
             }
