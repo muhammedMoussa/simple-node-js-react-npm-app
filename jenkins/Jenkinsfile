@@ -8,7 +8,7 @@ pipeline {
        
         stage('Build') {
             steps {
-                echo "boolean parameter is : ${parameters.myBoolean}"
+                echo "boolean parameter is : ${params.myBoolean}"
                 sh 'npm install'
             }
         }
