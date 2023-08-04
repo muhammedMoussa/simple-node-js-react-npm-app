@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 // sh 'npm install'
+                sayHi('Muhammed')
                 echo 'Build'
             }
         }
@@ -22,4 +23,8 @@ pipeline {
             }
         }
     }
+}
+
+def sayHi(String name) {
+    echo 'Hello ${name} from jenkins function..'
 }
