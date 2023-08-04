@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    if(params.myBoolean == true) {
+                    if(params.myBoolean == false) {
                         currentBuild.result = 'SUCCESS'
                         return
                     } else {
